@@ -178,13 +178,14 @@ public class TexasHoldemController implements Initializable {
 				MainTransition.getChildren().add(DealCard(pCards, iCardImg, DR.getiCardPosition()));
 			}
 		}
-
+		
+		
 		MainTransition.play();
 	}
 
 	public void HandleHandScorePokerSummary(HandScorePokerSummary HSPS)
 	{
-		
+		HSPS.getBestPossibleHands().get(0).getHandScorePoker().geteHandStrength().toString();
 	}
 	/**
 	 * @author BRG
