@@ -185,7 +185,7 @@ public class TexasHoldemController implements Initializable {
 
 	public void HandleHandScorePokerSummary(HandScorePokerSummary HSPS)
 	{
-		HSPS.getBestPossibleHands().get(0).getHandScorePoker().geteHandStrength().toString();
+		HSPS.getBestMadeHands().get(0).getHandScorePoker().geteHandStrength().toString();
 	}
 	/**
 	 * @author BRG
