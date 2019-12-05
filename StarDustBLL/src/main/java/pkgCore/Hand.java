@@ -1,12 +1,13 @@
 package pkgCore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
 import pkgException.DeckException;
 import pkgException.HandException;
 
-public abstract class Hand {
+public abstract class Hand implements Serializable {
 
 	private UUID HandID;
 	/**

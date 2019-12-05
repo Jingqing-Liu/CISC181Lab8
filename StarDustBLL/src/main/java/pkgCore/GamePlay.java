@@ -1,5 +1,6 @@
 package pkgCore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,7 +23,7 @@ import pkgEnum.eSuit;
 import pkgException.DeckException;
 import pkgException.HandException;
 
-public class GamePlay {
+public class GamePlay  implements Serializable {
 
 	private Rule Rle;
 	private ArrayList<Player> GamePlayers = new ArrayList<Player>();
