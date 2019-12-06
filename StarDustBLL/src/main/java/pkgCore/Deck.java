@@ -1,5 +1,6 @@
 package pkgCore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
@@ -9,7 +10,7 @@ import pkgEnum.eSubstituteDeck;
 import pkgEnum.eSuit;
 import pkgException.DeckException;
 
-public class Deck {
+public class Deck implements Serializable {
 
 	/**
 	 * @author BRG

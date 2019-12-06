@@ -1,11 +1,12 @@
 package pkgCore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
 import pkgEnum.eHandStrength;
 
-public class HandScorePoker extends HandScore {
+public class HandScorePoker extends HandScore implements Serializable {
 	private eHandStrength eHandStrength;
 	private Card HiCard;
 	private Card LoCard;
@@ -140,4 +141,45 @@ public class HandScorePoker extends HandScore {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		
+		String strHand = null;
+		
+		switch (this.geteHandStrength())
+		{
+		case RoyalFlush:
+			strHand = this.getHiCard().geteSuit().toString() + ' ' +  this.geteHandStrength().toString();
+			break;
+		case StraightFlush:
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.getHiCard().geteSuit().toString() +  + ' ' +  this.geteHandStrength().toString();
+			break;
+		case FourOfAKind:
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.geteHandStrength().toString();
+			break;
+		case FullHouse:
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.getLoCard().geteRank().toString() + ' ' +  this.geteHandStrength().toString();
+			break;
+		case TwoPair:
+			strHand =  this.geteHandStrength().toString() + '-' + this.getHiCard().geteRank().toString() + '-' + this.getLoCard().geteRank().toString();
+			break;
+		case ThreeOfAKind :
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.geteHandStrength().toString();
+			break;
+		case Straight:
+			strHand =  this.geteHandStrength().toString() + '-' + this.getHiCard().geteRank().toString();			
+			break;
+		case Pair:
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.geteHandStrength().toString();			
+			break;
+		case HighCard:
+			strHand = this.getHiCard().geteRank().toString() + '-' + this.geteHandStrength().toString();			
+			break;
+			
+		
+		}
+		return strHand;
+	}
+
+	
 }
